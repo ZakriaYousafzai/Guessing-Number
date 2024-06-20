@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let score = 0;
+        let confirmed = true;
+
+        while (confirmed) {
+
+            let rand = Math.floor(1 + Math.random() * 100);
+
+            let guessed = prompt("Guess a number between 1 to 100 : ");
+
+            while (guessed != rand) {
+                if (guessed > rand) {
+                    guessed = prompt("Try Again try lesser : ");
+                } else if (guessed < rand) {
+                    guessed = prompt("Try Again try greater: ");
+                }
+                score++;
+            }
+
+            score = 100 - score;
+
+            if (guessed == rand) {
+                confirmed = confirm(" You guessed the number Correct (" + rand + ") \n  Your Score is " + score + " out of 100 \n Do you want to continue: ");
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
